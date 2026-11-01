@@ -1,0 +1,19 @@
+{
+  "dataset": "ShuttleSet22 (CoachAI Badminton Challenge, IJCAI 2023)",
+  "test_rallies": 860,
+  "test_predictions": 9909,
+  "train_predictions": 22349,
+  "window": 4,
+  "majority": {
+    "top1": 0.2302,
+    "top3": 0.5689
+  },
+  "bigram": {
+    "top1": 0.5257,
+    "top3": 0.9358
+  },
+  "gru": {
+    "top1": 0.5248,
+    "top3": 0.9404
+  }
+}

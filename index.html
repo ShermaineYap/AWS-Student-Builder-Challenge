@@ -1,0 +1,207 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Shermaine Yap · Data analytics & deep learning</title>
+  <meta name="description" content="Shermaine Yap: data analytics and deep learning. Try to out-play a neural network trained on professional badminton.">
+  <meta property="og:title" content="Shermaine Yap: rally against my model">
+  <meta property="og:description" content="A GRU trained on 22,000 professional badminton strokes tries to predict your next shot.">
+  <link rel="icon" href="assets/shuttle.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=Barlow:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <a class="skip" href="#about">Skip to content</a>
+
+  <header class="topbar">
+    <a class="wordmark" href="#top" aria-label="Shermaine Yap, back to top">SY</a>
+    <nav aria-label="Sections">
+      <ul>
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li><button class="nav-rally" type="button" data-open-rally>Rally</button></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="top">
+    <!-- HERO: a half court, name painted in as the court marking -->
+    <section class="hero" aria-labelledby="hero-name">
+      <div class="court-hero" aria-hidden="true">
+        <svg viewBox="0 0 610 670" preserveAspectRatio="xMidYMid slice">
+          <rect x="5" y="5" width="600" height="660" class="hl"/>
+          <line x1="50" y1="5" x2="50" y2="665" class="hl"/>
+          <line x1="560" y1="5" x2="560" y2="665" class="hl"/>
+          <line x1="5" y1="198" x2="605" y2="198" class="hl"/>
+          <line x1="5" y1="589" x2="605" y2="589" class="hl"/>
+          <line x1="305" y1="198" x2="305" y2="665" class="hl"/>
+        </svg>
+      </div>
+      <button class="hero-shuttle" type="button" data-open-rally tabindex="-1" aria-hidden="true"><img src="assets/shuttle.svg" alt=""></button>
+      <div class="hero-text">
+        <h1 id="hero-name">Shermaine<br>Yap</h1>
+        <p class="hero-role">Data analytics and deep learning, from Malaysia. I build models that read sequences, then put them where people can poke at them.</p>
+        <div class="hero-rally">
+          <button class="shuttle-btn" type="button" data-open-rally aria-describedby="rally-hint">
+            <img src="assets/shuttle.svg" alt="" width="44" height="44">
+            <span>Rally against my model</span>
+          </button>
+          <p id="rally-hint" class="hint">Hidden in here: a neural network trained on 22,000 pro badminton strokes. It tries to guess your next shot before you play it.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="about" class="block" aria-labelledby="about-h">
+      <h2 id="about-h">About me</h2>
+      <div class="prose">
+        <p>I'm Shermaine Yap Shi Min, a Computing student specialising in Data Analytics at Asia Pacific University of Technology &amp; Innovation (APU) in Kuala Lumpur.</p>
+        <p>The project I'm proudest of taught a network to forecast the next stroke in professional badminton rallies. It changed how I think about modelling: the clever architecture lost to a two-stroke window, and the honest baseline was the hardest thing to beat. I like work where the data is messy, the result has to be explained to someone, and the answer is allowed to be "simpler was better".</p>
+        <p>Right now I'm going deeper on applied AI and analytics: the University of Tokyo's GCI World data science programme, the Microsoft Power BI Data Analyst certificate, and building on AWS.</p>
+      </div>
+    </section>
+
+    <section id="skills" class="block" aria-labelledby="skills-h">
+      <h2 id="skills-h">Skills, and where I've used them</h2>
+      <div class="sheet" role="region" aria-labelledby="skills-h" tabindex="0">
+        <table>
+          <thead>
+            <tr><th scope="col">Area</th><th scope="col">Tools</th><th scope="col">Used in</th></tr>
+          </thead>
+          <tbody>
+            <tr><th scope="row">Deep learning</th><td>TensorFlow / Keras, PyTorch, GRU, Bi-LSTM, 1D-CNN, Keras Tuner</td><td>Badminton stroke forecasting; the Rally model on this page</td></tr>
+            <tr><th scope="row">Machine learning</th><td>scikit-learn, Random Forest, n-gram baselines, controlled experiments</td><td>Baselines and ablations for stroke forecasting</td></tr>
+            <tr><th scope="row">Data &amp; analytics</th><td>Python, pandas, NumPy, Power BI</td><td>Data analytics degree; Power BI Data Analyst certificate</td></tr>
+            <tr><th scope="row">Databases</th><td>SQL Server, database security</td><td>Database coursework</td></tr>
+            <tr><th scope="row">Cloud</th><td>AWS Amplify Hosting, Lambda, API Gateway, DynamoDB, AWS Budgets</td><td>This site and its live leaderboard</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section id="projects" class="block" aria-labelledby="projects-h">
+      <h2 id="projects-h">Projects and achievements</h2>
+
+      <article class="project">
+        <h3>Forecasting the next stroke in professional badminton</h3>
+        <p class="project-meta">Optimisation &amp; Deep Learning, APU, 2026</p>
+        <p>Used the ShuttleSet22 stroke-level dataset to predict a player's next shot type from the rally so far. Built a 1D-CNN and a Bi-LSTM against Random Forest and bigram baselines, ran eight controlled optimisation experiments plus a Keras Tuner random search, and landed on a GRU with a two-stroke window.</p>
+        <!-- TODO: add a link to the ODL notebook or report, e.g.
+        <p class="project-links"><a href="https://github.com/ShermaineYap/...">Read the write-up</a></p> -->
+      </article>
+
+      <article class="project">
+        <h3>Rally: play against a stroke-forecasting model</h3>
+        <p class="project-meta">AWS Student Builder Challenge, 2026</p>
+        <p>The game on this page. A compact GRU, retrained on ShuttleSet22, runs directly in your browser with no ML library, and learns your habits as you play. Results feed a serverless leaderboard on API Gateway, Lambda and DynamoDB.</p>
+        <p class="project-links">
+          <button class="linklike" type="button" data-open-rally>Play it</button>
+          <a href="https://github.com/ShermaineYap/AWS-Student-Builder-Challenge">Source on GitHub</a>
+        </p>
+      </article>
+
+      <article class="project">
+        <h3>Google Cloud AI Builder Cup 2026</h3>
+        <p class="project-meta">Hackathon, Asia Pacific</p>
+        <!-- TODO: say what you built -->
+        <p>Took part in Google Cloud's AI Builder Cup hackathon.</p>
+      </article>
+
+      <h3 class="sub">Learning</h3>
+      <ul class="learning">
+        <li><strong>GCI World 2026</strong>, the data science and AI programme from the University of Tokyo's Matsuo-Iwasawa Lab</li>
+        <li><strong>Microsoft Power BI Data Analyst</strong> professional certificate, Coursera (in progress)</li>
+      </ul>
+    </section>
+
+    <section id="contact" class="block" aria-labelledby="contact-h">
+      <h2 id="contact-h">Contact</h2>
+      <ul class="contact">
+        <!-- TODO: <li><a href="https://www.linkedin.com/in/YOUR-LINKEDIN">LinkedIn</a></li> -->
+        <li><a href="https://github.com/ShermaineYap">GitHub</a></li>
+      </ul>
+    </section>
+  </main>
+
+  <footer class="foot">
+    <p>Built with plain HTML, CSS and JavaScript. Hosted on AWS Amplify. Stroke data: ShuttleSet22, CoachAI (MIT licence).</p>
+  </footer>
+
+  <!-- ===================== RALLY ===================== -->
+  <dialog id="rally" aria-labelledby="rally-title">
+    <div class="rally-shell">
+      <div class="rally-head">
+        <h2 id="rally-title">Rally against my model</h2>
+        <button class="close" type="button" data-close-rally aria-label="Close the game">✕</button>
+      </div>
+
+      <div class="scoreboard" aria-live="polite">
+        <div class="score you"><span class="who">You</span><span class="pts" id="score-you">0</span></div>
+        <div class="score-mid"><span id="rally-status">First to 5</span></div>
+        <div class="score model"><span class="who">Model</span><span class="pts" id="score-model">0</span></div>
+      </div>
+
+      <div class="rally-body">
+        <div class="court-wrap">
+          <svg class="court" id="court" viewBox="0 0 300 660" role="img" aria-label="Badminton court. The model's side is at the top, yours at the bottom.">
+            <rect x="0" y="0" width="300" height="660" class="mat"/>
+            <rect x="6" y="6" width="288" height="648" class="cl"/>
+            <line x1="27" y1="6" x2="27" y2="654" class="cl"/>
+            <line x1="273" y1="6" x2="273" y2="654" class="cl"/>
+            <line x1="6" y1="43" x2="294" y2="43" class="cl"/>
+            <line x1="6" y1="617" x2="294" y2="617" class="cl"/>
+            <line x1="6" y1="231" x2="294" y2="231" class="cl"/>
+            <line x1="6" y1="429" x2="294" y2="429" class="cl"/>
+            <line x1="150" y1="6" x2="150" y2="231" class="cl"/>
+            <line x1="150" y1="429" x2="150" y2="654" class="cl"/>
+            <line x1="0" y1="330" x2="300" y2="330" class="net"/>
+            <text x="150" y="150" class="side-label">MODEL</text>
+            <text x="150" y="540" class="side-label">YOU</text>
+            <g id="shuttle" class="shuttle-g" transform="translate(150,90)">
+              <circle r="7" class="cork"/>
+              <path d="M-6,-4 L-13,-22 L13,-22 L6,-4 Z" class="feathers"/>
+            </g>
+          </svg>
+          <p class="last-shot" id="last-shot" aria-live="polite"></p>
+        </div>
+
+        <div class="panel">
+          <div class="guess" id="guess">
+            <p class="guess-title" id="guess-title">Press start. The model serves.</p>
+            <div class="bars" id="bars" aria-label="Model's prediction for your shot"></div>
+          </div>
+          <div class="shots" id="shots" role="group" aria-label="Choose your shot"></div>
+          <div class="controls">
+            <button class="primary" type="button" id="start-btn">Start the match</button>
+            <button class="linklike" type="button" id="how-btn" aria-expanded="false" aria-controls="how">How it works</button>
+          </div>
+          <div id="how" class="how" hidden>
+            <p>Each time the shuttle comes to you, the model locks in a guess for your next shot before you choose. If it guesses right, it reads you and wins the point. Get three shots past it in one rally and the point is yours.</p>
+            <p>The model is a small GRU trained on <span id="m-train">22,349</span> strokes from professional singles matches (ShuttleSet22). On <span id="m-test">9,909</span> held-out pro strokes it names the exact next shot <span id="m-top1">52%</span> of the time and has it in its top three <span id="m-top3">94%</span> of the time. It also keeps a private tally of your choices and leans on it more as you play.</p>
+            <p>Your shot options come from real play: only replies that pros actually use after the incoming shot.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="result" id="result" hidden>
+        <h3 id="result-title"></h3>
+        <p id="result-body"></p>
+        <p id="result-global" class="global"></p>
+        <div class="controls">
+          <button class="primary" type="button" id="again-btn">Play again</button>
+          <button class="linklike" type="button" data-close-rally>Back to the portfolio</button>
+        </div>
+      </div>
+    </div>
+  </dialog>
+
+  <script src="config.js"></script>
+  <script src="assets/model/model.js"></script>
+  <script src="script.js"></script>
+  <script src="rally.js"></script>
+</body>
+</html>

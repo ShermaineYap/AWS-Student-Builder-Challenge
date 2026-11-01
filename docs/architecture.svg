@@ -1,0 +1,88 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 560" font-family="Barlow, Helvetica, Arial, sans-serif">
+  <defs>
+    <marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#18273A"/>
+    </marker>
+    <style>
+      .box{fill:#fff;stroke:#18273A;stroke-width:2;rx:8}
+      .aws{fill:#F6F8F4;stroke:#1E6B4E;stroke-width:2.5}
+      .t{font-size:18px;font-weight:600;fill:#18273A}
+      .s{font-size:13.5px;fill:#46566A}
+      .e{stroke:#18273A;stroke-width:2;fill:none;marker-end:url(#a)}
+      .d{stroke:#18273A;stroke-width:2;fill:none;stroke-dasharray:6 5;marker-end:url(#a)}
+      .lbl{font-size:13px;fill:#18273A;paint-order:stroke;stroke:#E9EFEA;stroke-width:5px;stroke-linejoin:round}
+      .grp{fill:none;stroke:#1E6B4E;stroke-width:1.5;stroke-dasharray:4 4}
+      .gl{font-size:14px;font-weight:700;fill:#1E6B4E}
+    </style>
+  </defs>
+  <rect width="1000" height="560" fill="#E9EFEA"/>
+  <text x="30" y="40" font-size="24" font-weight="700" fill="#18273A">Rally portfolio: how it fits together</text>
+
+  <!-- offline training -->
+  <rect x="30" y="75" width="260" height="120" rx="8" class="box"/>
+  <text x="48" y="104" class="t">Offline training (PyTorch)</text>
+  <text x="48" y="128" class="s">ShuttleSet22: 22,349 pro strokes</text>
+  <text x="48" y="148" class="s">GRU, 4-stroke window, early stopping</text>
+  <text x="48" y="168" class="s">Exports weights as model.json</text>
+
+  <!-- github -->
+  <rect x="370" y="75" width="220" height="120" rx="8" class="box"/>
+  <text x="388" y="104" class="t">GitHub repository</text>
+  <text x="388" y="128" class="s">index.html, styles.css,</text>
+  <text x="388" y="148" class="s">script.js, rally.js,</text>
+  <text x="388" y="168" class="s">assets/model/model.json</text>
+  <path d="M290 135 H362" class="e"/>
+  <text x="300" y="125" class="lbl">commit</text>
+
+  <!-- AWS group -->
+  <rect x="345" y="230" width="630" height="305" rx="12" class="grp"/>
+  <text x="955" y="256" class="gl" text-anchor="end">AWS account (one Region)</text>
+
+  <rect x="370" y="275" width="220" height="110" rx="8" class="aws"/>
+  <text x="388" y="304" class="t">AWS Amplify Hosting</text>
+  <text x="388" y="328" class="s">Builds on every push to main</text>
+  <text x="388" y="348" class="s">HTTPS + global CDN</text>
+  <text x="388" y="368" class="s">Serves the static site</text>
+  <path d="M480 195 V267" class="e"/>
+  <text x="490" y="220" class="lbl">auto-deploy</text>
+
+  <rect x="660" y="275" width="290" height="80" rx="8" class="aws"/>
+  <text x="678" y="304" class="t">API Gateway (HTTP API)</text>
+  <text x="678" y="328" class="s">POST /results, GET /stats</text>
+  <text x="678" y="346" class="s">CORS locked to the site, 5 req/s throttle</text>
+
+  <rect x="660" y="380" width="135" height="90" rx="8" class="aws"/>
+  <text x="674" y="408" class="t">AWS Lambda</text>
+  <text x="674" y="430" class="s">Python 3.12</text>
+  <text x="674" y="449" class="s">validates input</text>
+
+  <rect x="815" y="380" width="135" height="90" rx="8" class="aws"/>
+  <text x="829" y="408" class="t">DynamoDB</text>
+  <text x="829" y="430" class="s">on-demand, one</text>
+  <text x="829" y="449" class="s">item, atomic ADD</text>
+
+  <path d="M727 355 V372" class="e"/>
+  <path d="M795 425 H807" class="e"/>
+
+  <rect x="370" y="425" width="220" height="95" rx="8" class="aws"/>
+  <text x="388" y="452" class="t">Guardrails</text>
+  <text x="388" y="473" class="s">AWS Budgets: US$1/month alert</text>
+  <text x="388" y="491" class="s">IAM: 2 actions on 1 table</text>
+  <text x="388" y="509" class="s">CloudWatch Logs, 14-day expiry</text>
+
+  <!-- browser -->
+  <rect x="30" y="290" width="260" height="200" rx="8" class="box"/>
+  <text x="48" y="319" class="t">Visitor's browser</text>
+  <text x="48" y="343" class="s">Portfolio: About, Skills, Projects</text>
+  <text x="48" y="363" class="s">Rally game (opens from a hint)</text>
+  <text x="48" y="387" class="s">GRU forward pass in plain JS:</text>
+  <text x="48" y="407" class="s">no ML library, no inference server,</text>
+  <text x="48" y="427" class="s">nothing to time out during judging</text>
+  <text x="48" y="451" class="s">Learns the visitor's habits in-session</text>
+  <text x="48" y="471" class="s">Works offline if the API is down</text>
+
+  <path d="M362 330 H298" class="e"/>
+  <text x="300" y="320" class="lbl">page + model</text>
+  <path d="M290 405 H625 V315 H652" class="d"/>
+  <text x="300" y="399" class="lbl">match result (optional, 4 s timeout)</text>
+</svg>
